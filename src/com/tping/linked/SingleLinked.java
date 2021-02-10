@@ -64,6 +64,46 @@ public class SingleLinked {
         }
     }
 
+    // 链表反转
+    public void reverse(LinkedNode head){
+        // 如果链表为空，或者链表有效长度为1，则不反转链表
+        if( head.next == null || size(head) == 1 ) return;
+
+        LinkedNode reverseNode = new LinkedNode(0, 0);
+        LinkedNode temp = head.next;
+        LinkedNode next = null;
+        for (;temp != null;){
+            // 记录当前节点的下一个节点
+            next = temp.next;
+            // 将新链表的下一个节点赋值给当前节点的下一个节点
+            temp.next = reverseNode.next;
+            // 将当前节点赋值给新链表的下一个节点
+            reverseNode.next = temp;
+            // 当前节点指向原链表的下一节点
+            temp = next;
+        }
+
+        head.next = reverseNode.next;
+    }
+
+    // 链表头
+    public LinkedNode getHead(){
+        return this.head;
+    }
+
+    // 链表有效长度
+    public int size(LinkedNode head){
+        if( head.next == null ) return 0;
+
+        int length = 0;
+        LinkedNode temp = head;
+        for (;temp.next != null;){
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
     static class LinkedNode{
         public int id;
         public int val;

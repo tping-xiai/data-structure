@@ -104,7 +104,7 @@ public class SingleLinked {
         return length;
     }
 
-    static class LinkedNode{
+    public static class LinkedNode{
         public int id;
         public int val;
         public LinkedNode next;

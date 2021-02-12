@@ -1,4 +1,8 @@
-package com.tping.linked;
+package com.tping.linked.test;
+
+import com.tping.linked.SingleLinked;
+
+import java.util.LinkedList;
 
 public class SingleLinkedTest {
 
@@ -29,6 +33,12 @@ public class SingleLinkedTest {
          linked.reverse(linked.getHead());
         System.out.println("============反转后链表===========");
         linked.show();
+
+
+        LinkedList linkedList = null;
+
+        System.out.println(1 >> 1);
+        System.out.println(5 >> 1);
     }
 
 }
